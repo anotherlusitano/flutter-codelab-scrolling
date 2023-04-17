@@ -30,10 +30,19 @@ class HorizonsApp extends StatelessWidget {
 
               //--different behaviors of sliverAppBar--
               pinned: true,
+              stretch: true,
+              onStretchTrigger: () async {
+                print("Load more data!");
+              },
               //floating: true,
               //snap: true,
               expandedHeight: 200.0,
               flexibleSpace: FlexibleSpaceBar(
+                stretchModes: [
+                  StretchMode.zoomBackground,
+                  StretchMode.blurBackground,
+                  StretchMode.fadeTitle,
+                ],
                 collapseMode: CollapseMode.pin,
                 title: Text("I love cheese"),
                 background: DecoratedBox(
